@@ -7,8 +7,9 @@
   - [Introduction](#introduction)
   - [Overview](#overview)
   - [Prerequisites](#prerequisites)
-  - [Code Explanation](#code-explanation)
-    - [Node Class](#node-class)
+    - [Code Explanation](#code-explanation)
+      - [Node Class](#node-class)
+      - [Line Linked List](#line-linked-list)
 
 ## Introduction
 A linked list is a data structure commonly used as an alternative to arrays when you need to dynamically add items without a specific size requirement.
@@ -19,28 +20,22 @@ The purpose of this repository is to demonstrate how to implement a linked list 
 ## Prerequisites
 Before diving into the code, it is recommended to have the following knowledge:
 - Basic understanding of C++ fundamentals
-- Familiarity with pointers
+- Familiarity with memory management and Pointers: Linked lists rely on dynamic memory allocation and pointer manipulation.
 - Basic understanding of object-oriented programming (OOP) concepts
 
-## Code Explanation
+### Code Explanation
 
-### Node Class
+#### Node Class
+The `Node` class is the building block of the linked list. Each node consists of two primary components:
 
-The `Node` class is responsible for handling the nodes in the linked list. It has two member variables: `data`, which is a string that stores the content of the node, and `NEXT`, which is a pointer to the next node in the linked list.
+- **Data Field**: This field stores the actual content of the node.
+- **Pointer to Next Node (NEXT)**: This pointer establishes the connection between nodes, indicating the location of the next node in the sequence.
 
-```cpp
-class Node
-{
-public:
-    string data;
-    Node *NEXT;
+The `Node` class definition includes a constructor to initialize the node with default values and preparing the creation of new nodes.
 
-    Node()
-    {
-        this->data = "";
-        this->NEXT = NULL;
-    }
-};
-```
+#### Line Linked List
+The `LineLinkedList` class manages the linked list of nodes. **Key components of this class include**:
 
-In the constructor, the `data` variable is initialized to an empty string, and the `NEXT` pointer is set to `NULL`, indicating that it does not currently point to any node.
+- **HEAD Pointer**: This pointer serves as the entry point or starting node of the linked list.
+- **isEmpty() Method**: This method checks whether the linked list is empty by checking the `HEAD` pointer. If the HEAD pointer is `nullptr`, indicating the absence of nodes, the method returns true; otherwise, it returns false.
+- **addNode() Method**: This method adds a new node to the linked list, representing a word in a line of text. It dynamically allocates memory for the new node using the `new` keyword, and link it with the other nodes in the linked list.

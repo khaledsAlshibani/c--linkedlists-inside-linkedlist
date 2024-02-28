@@ -1,16 +1,17 @@
+#pragma once
 #include <iostream>
 #include <string>
-// using namespace std;
+using namespace std;
 
 class Node
 {
 public:
-    string data;
+    string DATA;
     Node *NEXT;
 
     Node()
     {
-        this->data = "";
-        this->NEXT = NULL;
+        DATA = "";
+        NEXT = nullptr;
     }
 };
