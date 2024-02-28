@@ -51,14 +51,16 @@ public:
     {
         if (isEmpty())
         {
-            cout << "List is empty." << endl;
+            cout << "\nList is empty." << endl;
             return;
         }
+
+        cout << "The inserted words are: ";
 
         Node *TEMP_HEAD = HEAD;
         while (isNotLastNode(TEMP_HEAD))
         {
-            cout << TEMP_HEAD->DATA << " ";
+            cout << TEMP_HEAD->DATA << ", ";
             TEMP_HEAD = TEMP_HEAD->NEXT;
         }
         cout << endl;
@@ -131,11 +133,11 @@ public:
 
         if (isFound)
         {
-            cout << "The word: '" << key << "' is found. It's order of the line is: " << counter << endl;
+            cout << "\nThe word: '" << key << "' is found. It's order of the line is: " << counter << endl;
         }
         else
         {
-            cout << "The word: '" << key << "' is not found." << endl;
+            cout << "\nThe word: '" << key << "' is not found." << endl;
         }
     }
 };

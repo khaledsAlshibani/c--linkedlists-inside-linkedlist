@@ -14,8 +14,10 @@ int main()
     Line1.insertWord("Hello");
     Line1.insertWord("lol");
     Line1.display();
-    cout << Line1.getLettersCount();
-    cout << Line1.getLettersCountByWordIndex(5);
+    cout << "\nAll letters count is: " << Line1.getLettersCount() << endl;
+    cout << "\nSingle word letters count is: " << Line1.getLettersCountByWordIndex(5) << endl;
+    Line1.searchByWord("Hello");
+    Line1.searchByWord("aa");
 
     br();
     cout << "Program End" << endl;
