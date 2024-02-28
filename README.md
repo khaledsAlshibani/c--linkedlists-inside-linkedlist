@@ -38,4 +38,4 @@ The `LineLinkedList` class manages the linked list of nodes. **Key components of
 
 - **HEAD Pointer**: This pointer serves as the entry point or starting node of the linked list.
 - **isEmpty() Method**: This method checks whether the linked list is empty by checking the `HEAD` pointer. If the HEAD pointer is `nullptr`, indicating the absence of nodes, the method returns true; otherwise, it returns false.
-- **addNode() Method**: This method adds a new node to the linked list, representing a word in a line of text. It dynamically allocates memory for the new node using the `new` keyword, and link it with the other nodes in the linked list.
+- **insertWord() Method**: This method adds a new node to the linked list, representing a word in a line of text. It dynamically allocates memory for the new node using the `new` keyword, it also links the inserted node with the other nodes in the linked list.

@@ -14,6 +14,11 @@ class FileLinkedList
         return (node != nullptr);
     }
 
+    bool isNotLastNodeByNext(Node *node)
+    {
+        return (node->NEXT != nullptr);
+    }
+
 public:
     FileLinkedList()
     {
@@ -25,10 +30,20 @@ public:
         return (HEAD == nullptr);
     }
 
-    void insertLine(LineLinkedList data)
+    void insertLine(string *words, int count)
     {
         Node *newNode = new Node;
         newNode->NEXT = nullptr;
+
+        for (int i = 0; i < count; i++)
+        {
+            newNode->DATA += words[i];
+
+            if (i != count - 1)
+            {
+                newNode->DATA += ",";
+            }
+        }
 
         if (isEmpty())
         {
@@ -36,12 +51,12 @@ public:
         }
         else
         {
-            Node *temp = HEAD;
-            while (temp->NEXT != nullptr)
+            Node *TEMP_HEAD = HEAD;
+            while (isNotLastNodeByNext(TEMP_HEAD))
             {
-                temp = temp->NEXT;
+                TEMP_HEAD = TEMP_HEAD->NEXT;
             }
-            temp->NEXT = newNode;
+            TEMP_HEAD->NEXT = newNode;
         }
     }
 
@@ -49,18 +64,51 @@ public:
     {
         if (isEmpty())
         {
-            cout << "\nList is empty." << endl;
+            cout << "\nNo lines added yet to the linked list" << endl;
             return;
         }
 
-        cout << "The inserted words are: ";
+        cout << "The inserted lines are: ";
 
         Node *TEMP_HEAD = HEAD;
         while (isNotLastNode(TEMP_HEAD))
         {
-            cout << TEMP_HEAD->DATA << " ";
+            cout << TEMP_HEAD->DATA << " - ";
             TEMP_HEAD = TEMP_HEAD->NEXT;
         }
+        cout << endl;
+    }
+
+    void displayByLineIndex(int index)
+    {
+        int loopIndex = 0;
+        bool isFound = false;
+
+        if (isEmpty())
+        {
+            cout << "\nNo lines added yet to the linked list" << endl;
+            return;
+        }
+
+        Node *TEMP_HEAD = HEAD;
+        while (isNotLastNode(TEMP_HEAD))
+        {
+            loopIndex++;
+
+            if (loopIndex == index)
+            {
+                cout << TEMP_HEAD->DATA;
+                isFound = true;
+            }
+
+            TEMP_HEAD = TEMP_HEAD->NEXT;
+        }
+
+        if (!isFound)
+        {
+            cout << "\nThere is no line with index: " << index << endl;
+        }
+
         cout << endl;
     }
 };
