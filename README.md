@@ -1,8 +1,8 @@
-# README.md: Explaining Linked List Data Structure in C++
+# Explaining Linked List Data Structure in C++
 
 ## Table of Contents
 
-- [README.md: Explaining Linked List Data Structure in C++](#readmemd-explaining-linked-list-data-structure-in-c)
+- [Explaining Linked List Data Structure in C++](#explaining-linked-list-data-structure-in-c)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Overview](#overview)
