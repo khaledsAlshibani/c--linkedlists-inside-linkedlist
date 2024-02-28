@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-using namespace std;
+// using namespace std;
 
 class Node
 {
@@ -14,9 +14,3 @@ public:
         this->NEXT = NULL;
     }
 };
-
-int main()
-{
-
-    return 0;
-}
