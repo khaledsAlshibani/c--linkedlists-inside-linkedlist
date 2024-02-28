@@ -1,18 +1,20 @@
-# Explaining Linked List Data Structure in C++
-
-## Table of Contents
-
-- [Explaining Linked List Data Structure in C++](#explaining-linked-list-data-structure-in-c)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Overview](#overview)
-  - [Prerequisites](#prerequisites)
-    - [Code Explanation](#code-explanation)
-      - [Node Class](#node-class)
-      - [Line Linked List](#line-linked-list)
+<div align="center">
+    <h1>Reading File & Storing it Inside a Linked List of Linked Lists</h1>
+    <img src="https://iili.io/JMf2vqX.png">
+</div>
 
 ## Introduction
 A linked list is a data structure commonly used as an alternative to arrays when you need to dynamically add items without a specific size requirement.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+  - [Code Explanation](#code-explanation)
+    - [Node Class](#node-class)
+    - [Line Linked List](#line-linked-list)
 
 ## Overview
 The purpose of this repository is to demonstrate how to implement a linked list data structure in C++. The program reads a file containing text, breaks it into lines, and then further breaks each line into words. Each line is represented by a linked list, where each word is stored in a node of the linked list. Finally, all the lines are stored in another linked list.
