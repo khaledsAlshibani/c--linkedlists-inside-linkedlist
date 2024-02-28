@@ -27,26 +27,41 @@ public:
     Node *insertWord(string data)
     {
         Node *newNode = new Node;
+        newNode->DATA = data;
+        newNode->NEXT = nullptr;
 
         if (isEmpty())
         {
             HEAD = newNode;
         }
-
-        newNode->DATA = data;
-        newNode->NEXT = nullptr;
+        else
+        {
+            Node *TEMP_HEAD = HEAD;
+            while (TEMP_HEAD->NEXT != nullptr)
+            {
+                TEMP_HEAD = TEMP_HEAD->NEXT;
+            }
+            TEMP_HEAD->NEXT = newNode;
+        }
 
         return newNode;
     }
 
-    void displayNodes()
+    void display()
     {
+        if (isEmpty())
+        {
+            cout << "List is empty." << endl;
+            return;
+        }
+
         Node *TEMP_HEAD = HEAD;
         while (isNotLastNode(TEMP_HEAD))
         {
             cout << TEMP_HEAD->DATA << " ";
             TEMP_HEAD = TEMP_HEAD->NEXT;
         }
+        cout << endl;
     }
 
     int getWordsCount()
@@ -80,45 +95,47 @@ public:
     int getLettersCountByWordIndex(int index)
     {
         int loopIndex = 0;
-        int count = 0;
 
         Node *TEMP_HEAD = HEAD;
         while (isNotLastNode(TEMP_HEAD))
         {
             loopIndex++;
-            TEMP_HEAD = TEMP_HEAD->NEXT;
 
             if (loopIndex == index)
             {
-                break;
                 return TEMP_HEAD->DATA.length();
             }
-            else
-            {
-                return -1;
-            }
+
+            TEMP_HEAD = TEMP_HEAD->NEXT;
         }
+
+        return -1;
     }
 
     void searchByWord(string key)
     {
         int counter = 0;
+        bool isFound = false;
 
         Node *TEMP_HEAD = HEAD;
         while (isNotLastNode(TEMP_HEAD))
         {
-            TEMP_HEAD = TEMP_HEAD->NEXT;
             counter++;
-
             if (TEMP_HEAD->DATA == key)
             {
-                break;
-                cout << "The word: '" << key << "' is found. It's order of the line is: " << counter << endl;
+                isFound = true;
+                break; // Exit the loop once the word is found
             }
-            else
-            {
-                cout << "The word: '" << key << "' is not found." << endl;
-            }
+            TEMP_HEAD = TEMP_HEAD->NEXT;
+        }
+
+        if (isFound)
+        {
+            cout << "The word: '" << key << "' is found. It's order of the line is: " << counter << endl;
+        }
+        else
+        {
+            cout << "The word: '" << key << "' is not found." << endl;
         }
     }
 };

@@ -12,9 +12,10 @@ int main()
     
     LineLinkedList Line1;
     Line1.insertWord("Hello");
-    Line1.displayNodes();
-    Line1.getLettersCount();
-    Line1.getLettersCountByWordIndex(1);
+    Line1.insertWord("lol");
+    Line1.display();
+    cout << Line1.getLettersCount();
+    cout << Line1.getLettersCountByWordIndex(5);
 
     br();
     cout << "Program End" << endl;
