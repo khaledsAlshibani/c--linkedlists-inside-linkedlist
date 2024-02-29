@@ -121,7 +121,7 @@ public:
         Node *TEMP_HEAD = HEAD;
         while (isNotLastNode(TEMP_HEAD))
         {
-            cout << TEMP_HEAD->DATA << ",";
+            cout << TEMP_HEAD->DATA << " ";
             TEMP_HEAD = TEMP_HEAD->NEXT;
         }
         cout << endl;

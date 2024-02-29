@@ -3,34 +3,51 @@
 #include <string>
 #include "FileReader.h"
 #include "LineLinkedList.h"
+#include "MasterLinkedList.h"
 using namespace std;
 
 class LinkedListProcessor
 {
     string filePath;
+    FileReader fileReader;
+    MasterLinkedList masterList;
 
 public:
-    LinkedListProcessor() : filePath("../assets/data.txt") {}
-    LinkedListProcessor(const string &filePath) : filePath(filePath) {}
+    LinkedListProcessor() : filePath("../assets/data.txt"), fileReader(filePath) {}
+    LinkedListProcessor(const string &filePath) : filePath(filePath), fileReader(filePath) {}
 
-    void process()
+    void processFile()
     {
-        FileReader file(filePath);
-        int count = file.getLinesCount();
+        int totalFileLines = fileReader.getLinesCount();
+        LineLinkedList *lineList = new LineLinkedList[totalFileLines];
 
-        LineLinkedList *lines = new LineLinkedList[count];
+        fileReader.resetFile();
 
-        for (int index = 0; index < count; ++index)
+        for (int lineNumber = 0; lineNumber < totalFileLines; lineNumber++)
         {
-            string *words = file.getWordsByLine(index);
-            if (words != nullptr)
+            // Generate instances objects of LineLinkedList dynamically
+            string *lineWords = fileReader.getWordsByLine(lineNumber);
+            if (lineWords == nullptr)
             {
-                lines[index].insertMultipleWords(words, file.getWordsCountByLine(index));
-                delete[] words;
+                cout << "Line " << lineNumber + 1 << " is empty" << endl;
+                continue;
             }
-        }
+            int lineWordsCount = fileReader.getWordsCountByLine(lineNumber);
 
-        delete[] lines;
-        lines[1].getWordsCount();
+            // insert words into generated objects of LineLinkedList
+            lineList[lineNumber].insertMultipleWords(lineWords, lineWordsCount);
+
+            // Insert LineLinkedList objects into MasterLinkedList
+            string *masterWords = lineList[lineNumber].get();
+            int masterWordsCount = lineList[lineNumber].getWordsCount();
+            masterList.insertLine(masterWords, masterWordsCount);
+
+            delete[] lineWords;
+        }
+    }
+
+    MasterLinkedList getMasterList() const
+    {
+        return masterList;
     }
 };

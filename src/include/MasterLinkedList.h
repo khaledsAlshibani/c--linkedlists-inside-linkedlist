@@ -41,7 +41,7 @@ public:
 
             if (i != count - 1)
             {
-                newNode->DATA += ",";
+                newNode->DATA += " ";
             }
         }
 
@@ -60,6 +60,25 @@ public:
         }
     }
 
+    int getLinesCount()
+    {
+        if (isEmpty())
+        {
+            return 0;
+        }
+
+        int count = 0;
+
+        Node *TEMP_HEAD = HEAD;
+        while (isNotLastNode(TEMP_HEAD))
+        {
+            count++;
+            TEMP_HEAD = TEMP_HEAD->NEXT;
+        }
+        
+        return count;
+    }
+
     void display()
     {
         if (isEmpty())
@@ -68,12 +87,12 @@ public:
             return;
         }
 
-        cout << "The inserted lines are: ";
+        cout << "The inserted lines are:\n";
 
         Node *TEMP_HEAD = HEAD;
         while (isNotLastNode(TEMP_HEAD))
         {
-            cout << TEMP_HEAD->DATA << " - ";
+            cout << TEMP_HEAD->DATA << endl;
             TEMP_HEAD = TEMP_HEAD->NEXT;
         }
         cout << endl;
