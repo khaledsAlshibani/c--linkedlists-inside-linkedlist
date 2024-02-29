@@ -2,7 +2,7 @@
 #include <string>
 #include "include/LineLinkedList.h"
 #include "include/FileLinkedList.h"
-#include "include/ReadingFile.h"
+#include "include/FileReader.h"
 using namespace std;
 
 void br(int n = 2);
@@ -13,8 +13,9 @@ int main()
     br();
 
     string filePath = "assets/data.txt";
-    ReadingFile TheFile(filePath);
-    TheFile.displayFileByLines();
+    FileReader TheFile(filePath);
+    // TheFile.displayFileByLines();
+    TheFile.displayFileByWords();
 
     br();
     cout << "Program End";

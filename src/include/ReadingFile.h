@@ -4,7 +4,7 @@
 #include <fstream>
 using namespace std;
 
-class ReadingFile
+class FileReader
 {
     ifstream file;
     string filename;
@@ -15,10 +15,10 @@ class ReadingFile
     }
 
 public:
-    ReadingFile(const string &filename)
+    FileReader(const string &filename)
     {
         this->filename = filename;
-        file.open(filename);
+        file.open(filename, ios::in);
         if (!isFileExist())
         {
             cout << "Error: Unable to open file " << filename << endl;
@@ -32,5 +32,16 @@ public:
         {
             cout << line << endl << endl;
         }
+    }
+
+    void displayFileByWords() {
+        string word;
+        while (file >> word) {
+            cout << word << endl;
+        }
+    }
+
+    ~FileReader() {
+        file.close();
     }
 };
