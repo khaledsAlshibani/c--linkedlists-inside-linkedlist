@@ -29,6 +29,30 @@ public:
         return (HEAD == nullptr);
     }
 
+    void insertMultipleWords(string *words, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Node *newNode = new Node;
+            newNode->NEXT = nullptr;
+            newNode->DATA += words[i];
+
+            if (isEmpty())
+            {
+                HEAD = newNode;
+            }
+            else
+            {
+                Node *TEMP_HEAD = HEAD;
+                while (isNotLastNodeByNext(TEMP_HEAD))
+                {
+                    TEMP_HEAD = TEMP_HEAD->NEXT;
+                }
+                TEMP_HEAD->NEXT = newNode;
+            }
+        }
+    }
+
     void insertWord(string data)
     {
         Node *newNode = new Node;

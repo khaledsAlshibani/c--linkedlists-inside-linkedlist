@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "include/LineLinkedList.h"
-#include "include/FileLinkedList.h"
+#include "include/MasterLinkedList.h"
 #include "include/FileReader.h"
 using namespace std;
 
@@ -12,10 +12,17 @@ int main()
     cout << "Program Start";
     br();
 
-    string filePath = "assets/data.txt";
-    FileReader TheFile(filePath);
-    // TheFile.displayFileByLines();
-    TheFile.displayFileByWords();
+    MasterLinkedList Master;
+    FileReader File("assets/data.txt");
+
+    LineLinkedList Line1;
+    string *Line1Words = File.getWordsByLine(1);
+    int Line1WordsCount = File.getWordsCountByLine(1);
+    File.resetFile();
+    cout << Line1Words;
+    cout << Line1WordsCount;
+    Line1.insertMultipleWords(Line1Words, Line1WordsCount);
+    Line1.display();
 
     br();
     cout << "Program End";

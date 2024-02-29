@@ -5,7 +5,7 @@
 #include "LineLinkedList.h"
 using namespace std;
 
-class FileLinkedList
+class MasterLinkedList
 {
     Node *HEAD;
 
@@ -20,7 +20,7 @@ class FileLinkedList
     }
 
 public:
-    FileLinkedList()
+    MasterLinkedList()
     {
         HEAD = nullptr;
     }
