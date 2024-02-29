@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <sstream>
 using namespace std;
 
 class FileReader
@@ -95,15 +96,21 @@ public:
         int count = 0;
         int loopIndex = 0;
 
+        resetFile();
+
         while (getline(file, line))
         {
             if (loopIndex == key)
             {
+                istringstream iss(line); 
                 string word;
-                while (file >> word)
+
+                while (iss >> word)
                 {
                     count++;
                 }
+
+                break;
             }
             loopIndex++;
         }
@@ -117,32 +124,36 @@ public:
         int loopIndex = 0;
         bool isFound = false;
 
-        string *words = new string[this->getLinesCount()];
+        string *words = new string[this->getWordsCountByLine(key)];
+
+        resetFile();
 
         while (getline(file, line))
         {
             if (loopIndex == key)
             {
+                istringstream iss(line);
                 string word;
+                int wordIndex = 0;
 
-                while (file >> word)
+                while (iss >> word)
                 {
-                    words[loopIndex++] = word;
+                    words[wordIndex++] = word;
                 }
 
                 isFound = true;
+                break;
             }
             loopIndex++;
         }
 
         if (!isFound)
         {
+            delete[] words;
             return nullptr;
         }
-        else
-        {
-            return words;
-        }
+
+        return words;
     }
 
     ~FileReader()
