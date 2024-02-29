@@ -25,7 +25,6 @@ The `LineLinkedList` class manages the linked list of words, each node inside it
    - Checks if the linked list is empty by checking the `HEAD` pointer.
    - If the HEAD pointer is `nullptr`, indicating the initialized value and the absence of nodes, the method returns true, otherwise, it returns false.
 
-
 2. **`insertMultipleWords(string *words, int count)`**:
    - Inserts multiple words at the same time into the linked list, it create nodes at the last a node for each added word and then insert each word inside a node (Nol all words in the same node).
    - Parameters:
@@ -77,8 +76,8 @@ The `LineLinkedList` class manages the linked list of words, each node inside it
   - **Space Complexity**: The space complexity of inserting a single word is O(1), as it only requires memory allocation for a single node.
 
 - Time and Space Complexities of All Words Insertion:
-  - **Time Complexity**: The time complexity of inserting all words into the linked list depends on the total number of words being inserted, denoted by n. If there are n words to be inserted, and the average length of each word is k, then the overall time complexity is O(n * k). This is because each word insertion process takes O(k) time, and we perform this operation for each of the n words.
-  - **Space Complexity**: The space complexity for inserting all words is O(m), where m is the total number of words being inserted. This is because memory is allocated for each individual node in the linked list.
+  - **Time Complexity**: The time complexity of inserting all words into the linked list depends on the total number of words being inserted, denoted by `n`. If there are `n` words to be inserted, and the average length of each word is `k`, then the overall time complexity is `O(n * k)`. This is because each word insertion process takes `O(k)` time, and we perform this operation for each of the n words.
+  - **Space Complexity**: The space complexity for inserting all words is `O(n)`, where `n` is the total number of words being inserted. This is because memory is allocated for each individual node in the linked list.
 
 - What is `#pragma once` at the head of the file?
   - `#pragma once` is a preprocessor directive that ensures a header file is included only once during compilation. It serves the same purpose as traditional include guards (`#ifndef`, `#define`, `#endif`), but with fewer lines of code and improved compile speed. It helps prevent issues like [circular dependencies](https://en.wikipedia.org/wiki/Circular_dependency#:~:text=In%20software%20engineering%2C%20a%20circular,also%20known%20as%20mutually%20recursive.) and reduces the likelihood of [name clashes](https://codepal.ai/error-message-explainer/query/atlCEDvx/naming-conflict-in-cpp-code#:~:text=When%20the%20same%20name%20is,number%3B%20in%20the%20code%20snippet.).

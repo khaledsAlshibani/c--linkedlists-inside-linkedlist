@@ -46,7 +46,7 @@ public:
         }
     }
 
-    MasterLinkedList getMasterList() const
+    MasterLinkedList getMasterList()
     {
         return masterList;
     }
