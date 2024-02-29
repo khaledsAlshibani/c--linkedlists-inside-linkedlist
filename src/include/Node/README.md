@@ -2,10 +2,10 @@
 ![Node](https://iili.io/JMxZLqF.png)
 
 
-## Table of Contents
+## Contents
 
 - [`Node` Class Overview](#node-class-overview)
-  - [Table of Contents](#table-of-contents)
+  - [Contents](#table-of-contents)
   - [Frequently Asked Questions (FAQs)](#frequently-asked-questions-faqs)
 
 The `Node` class is the building block in the architecture of linked lists. Each node consists of **two primary components**:

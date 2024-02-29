@@ -2,10 +2,10 @@
 ![Master Linked List](https://iili.io/JMTgbjt.png)
 The `MasterLinkedList` class manages a linked list of line-linked-lists, where each node contains the data of a whole line-linked-list.
 
-## Table of Contents
+## Contents
 
 - [`MasterLinkedList` Class Overview](#masterlinkedlist-class-overview)
-  - [Table of Contents](#table-of-contents)
+  - [Contents](#table-of-contents)
   - [Class Members](#class-members)
   - [Constructor](#constructor)
   - [Member Functions](#member-functions)
