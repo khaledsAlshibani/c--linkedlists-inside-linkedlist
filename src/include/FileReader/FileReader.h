@@ -62,7 +62,7 @@ public:
         }
     }
 
-    void displayWordsByLine(int key)
+    void displayWordsByLine(int index)
     {
         string line;
         int loopIndex = 1;
@@ -70,7 +70,7 @@ public:
 
         while (getline(file, line))
         {
-            if (loopIndex == key)
+            if (loopIndex == index)
             {
                 string word;
 
@@ -80,13 +80,14 @@ public:
                 }
 
                 isFound = true;
+                break;
             }
             loopIndex++;
         }
 
         if (!isFound)
         {
-            cout << "Line " << key << " not found" << endl;
+            cout << "Line " << index << " not found" << endl;
         }
     }
 

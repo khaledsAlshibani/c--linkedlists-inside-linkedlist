@@ -27,9 +27,10 @@ Before diving into the code, it is recommended to have the following knowledge:
 
 ## Classes Documentations
 - [FileReader](src/include/FileReader/README.md): A class for reading text files and extracting lines and words from them.
-- [LinkedListProcessor](src/include/LinkedListProcessor/README.md): The main processing class that is responsible for parsing and storage of text data using linked lists.
+- [Node](src/include/Node/README.md): A class representing a single node in a linked list, storing data and a pointer to the next node.
 - [LineLinkedList](src/include/LineLinkedList/README.md): A linked list structure representing a single line of text, with each node containing a word.
 - [MasterLinkedList](src/include/MasterLinkedList/README.md): A linked list structure containing line-linked lists, forming a hierarchical structure for storing text data.
+- [LinkedListProcessor](src/include/LinkedListProcessor/README.md): The main processing class that is responsible for parsing and storage of text data using linked lists.
 
 ## Usage
 To use this repository, clone it. and ensure that your IDE supports C++.
