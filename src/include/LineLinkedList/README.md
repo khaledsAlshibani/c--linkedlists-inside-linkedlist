@@ -2,6 +2,15 @@
 ![Line Linked List](https://iili.io/JMxZis1.png)
 The `LineLinkedList` class manages the linked list of words, each node inside it has a word, so then objects will be created from this class, each object will represent a full line that its nodes are contain a word for each node.
 
+## Table of Contents
+
+- [`LineLinkedList` Class Overview](#linelinkedlist-class-overview)
+  - [Table of Contents](#table-of-contents)
+  - [Class Members](#class-members)
+  - [Constructor](#constructor)
+  - [Member Functions](#member-functions)
+  - [Frequently Asked Questions (FAQs)](#frequently-asked-questions-faqs)
+
 ## Class Members
 
 - **`HEAD` Pointer**: The `HEAD` is the common name for the pointer indicates to the first node in the linked list. serves as the entry point or starting node of the linked list.
