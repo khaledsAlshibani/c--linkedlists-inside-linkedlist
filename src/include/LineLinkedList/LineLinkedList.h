@@ -7,6 +7,7 @@ using namespace std;
 class LineLinkedList
 {
     Node *HEAD;
+    Node *TAIL;
 
     bool isNotLastNode(Node *node)
     {
@@ -22,6 +23,7 @@ public:
     LineLinkedList()
     {
         HEAD = nullptr;
+        TAIL=nullptr;
     }
 
     bool isEmpty()
@@ -39,38 +41,14 @@ public:
 
             if (isEmpty())
             {
-                HEAD = newNode;
+                HEAD = TAIL = newNode;
             }
             else
             {
-                Node *TEMP_HEAD = HEAD;
-                while (isNotLastNodeByNext(TEMP_HEAD))
-                {
-                    TEMP_HEAD = TEMP_HEAD->NEXT;
-                }
-                TEMP_HEAD->NEXT = newNode;
+        
+                TAIL->NEXT=newNode;
+                TAIL=newNode;
             }
-        }
-    }
-
-    void insertWord(string data)
-    {
-        Node *newNode = new Node;
-        newNode->DATA = data;
-        newNode->NEXT = nullptr;
-
-        if (isEmpty())
-        {
-            HEAD = newNode;
-        }
-        else
-        {
-            Node *TEMP_HEAD = HEAD;
-            while (isNotLastNodeByNext(TEMP_HEAD))
-            {
-                TEMP_HEAD = TEMP_HEAD->NEXT;
-            }
-            TEMP_HEAD->NEXT = newNode;
         }
     }
 
