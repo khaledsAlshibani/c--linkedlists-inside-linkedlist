@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Node.h"
-#include "LineLinkedList.h"
+#include "../Node/Node.h"
+#include "../LineLinkedList/LineLinkedList.h"
 using namespace std;
 
 class MasterLinkedList

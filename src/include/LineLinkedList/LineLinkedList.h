@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Node.h"
+#include "../Node/Node.h"
 using namespace std;
 
 class LineLinkedList
@@ -99,7 +99,7 @@ public:
         Node *TEMP_HEAD = HEAD;
         int index = 0;
 
-        while (TEMP_HEAD != nullptr && index <= this->getWordsCount())
+        while (TEMP_HEAD != nullptr && index < this->getWordsCount())
         {
             nodesData[index++] = TEMP_HEAD->DATA;
             TEMP_HEAD = TEMP_HEAD->NEXT;

@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "FileReader.h"
-#include "LineLinkedList.h"
-#include "MasterLinkedList.h"
+#include "../FileReader/FileReader.h"
+#include "../LineLinkedList/LineLinkedList.h"
+#include "../MasterLinkedList/MasterLinkedList.h"
 using namespace std;
 
 class LinkedListProcessor
