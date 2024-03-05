@@ -165,6 +165,27 @@ public:
 
     void searchByWordAndLine(int lineIndex, int wordIndex)
     {
+        if(getLinesCount()<lineIndex){
+            cout<<"The line out of range \n";
+        }
+        if(getWordsCount(lineIndex)<wordIndex){
+            cout<<"The word out of range \n";
+        }
+
+         string word;
+         Node *TEMP_HAED = HEAD;
+
+        for(int i=0 ; i<=lineIndex ; i++)
+        {
+            TEMP_HAED=TEMP_HAED->NEXT;
+        }
+          istringstream iss(TEMP_HAED->DATA);
+        for(int i=0 ;i<=wordIndex ; i++)
+        {
+            iss>>word;
+        }
+        cout<<"The word is :"<<word<<endl;
+        
     }
 
     int getLettersCountByWordIndex(int index)
@@ -198,6 +219,21 @@ public:
             TEMP_HEAD = TEMP_HEAD->NEXT;
         }
 
+        return count;
+    }
+    int getWordsCount(int lineIndex)
+    {
+        int count = 0;
+        string word;
+        Node *TEMP_HEAD = HEAD;
+        for(int i=0 ;i<=lineIndex ;i++){
+            TEMP_HEAD = TEMP_HEAD->NEXT;
+        }
+        istringstream iss(TEMP_HEAD->DATA);
+        while (iss>>word)
+        {
+            count++;
+        }
         return count;
     }
 };

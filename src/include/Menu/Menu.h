@@ -27,7 +27,8 @@ public:
             cout << "4- For display the full number of letters in the file\n";
             cout << "5- For display number of letters in a specific line\n";
             cout << "6- For search for a word in the file\n";
-            cout << "7- For exit\n";
+            cout << "7- For search a specific word in specific line\n";
+            cout << "8- For exit\n";
             cout << "Enter the operation number:";
 
             cin >> num_oper;
@@ -72,11 +73,24 @@ public:
                 break;
 
             case 7:
+            {
+            cout<<"Enter line :";
+            cin>>indx;
+            cout<<endl;
+            cout<<"Enter number of word :";
+            int num_word;
+            cin>>num_word;
+            masterList.searchByWordAndLine(indx,num_word);
+            }
+            break;
+
+            case 8:
                 exit(0);
+                cout<<"End of progrm \n";
 
             default:
                 break;
             }
-        } while (num_oper > 0 && num_oper < 8);
+        } while (num_oper > 0 && num_oper < 9);
     }
 };
