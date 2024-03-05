@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "../Node/Node.h"
 #include "../LineLinkedList/LineLinkedList.h"
 using namespace std;
@@ -75,7 +76,7 @@ public:
             count++;
             TEMP_HEAD = TEMP_HEAD->NEXT;
         }
-        
+
         return count;
     }
 
@@ -131,26 +132,30 @@ public:
         cout << endl;
     }
 
-     void searchByWord(string key)
+    void searchByWord(string key)
     {
-        int counter = 0;
         bool isFound = false;
 
         Node *TEMP_HEAD = HEAD;
         while (isNotLastNode(TEMP_HEAD))
         {
-            counter++;
-            if (TEMP_HEAD->DATA== key)
+            istringstream iss(TEMP_HEAD->DATA);
+            string word;
+
+            while (iss >> word)
             {
-                isFound = true;
-                break;
+                if (word == key)
+                {
+                    isFound = true;
+                    break;
+                }
             }
             TEMP_HEAD = TEMP_HEAD->NEXT;
         }
 
         if (isFound)
         {
-            cout << "\nThe word: '" << key << "' is found. It's order of the line is: " << counter << endl;
+            cout << "\nThe word: '" << key << "' is found" << endl;
         }
         else
         {
@@ -158,7 +163,11 @@ public:
         }
     }
 
-     int getLettersCountByWordIndex(int index)
+    void searchByWordAndLine(int lineIndex, int wordIndex)
+    {
+    }
+
+    int getLettersCountByWordIndex(int index)
     {
         int loopIndex = 0;
 
@@ -174,11 +183,11 @@ public:
 
             TEMP_HEAD = TEMP_HEAD->NEXT;
         }
-        
+
         return -1;
     }
 
-     int getLettersCount()
+    int getLettersCount()
     {
         int count = 0;
 
@@ -191,5 +200,4 @@ public:
 
         return count;
     }
-    
 };

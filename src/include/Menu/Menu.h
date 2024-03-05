@@ -31,9 +31,10 @@ public:
             cout << "Enter the operation number:";
 
             cin >> num_oper;
-            
+
             cout << "\n======================================================\n\n";
-         switch (num_oper)
+
+            switch (num_oper)
             {
             case 1:
                 masterList.display();
@@ -60,7 +61,7 @@ public:
                 cout << "Enter number of line :";
                 cin >> indx;
                 cout << masterList.getLettersCountByWordIndex(indx);
-                cout<<endl;
+                cout << endl;
             }
             break;
 
@@ -78,5 +79,4 @@ public:
             }
         } while (num_oper > 0 && num_oper < 8);
     }
- 
 };
