@@ -43,27 +43,32 @@ class menu{
         break;
 
         case 3:
+        cout<<"\nThe number of line is :";
         cout<<masterList.getLinesCount()<<endl;
         break;
 
         case 4:
-        cout<<lineLinked.getLettersCount()<<"\n";
+        cout<<"\nThe number of letter is :";
+        cout<<masterList.getLettersCount()<<"\n";
         break;
 
         case 5:{
         cout<<"Enter number of line :";
         cin>>indx;
-        cout<<lineLinked.getLettersCountByWordIndex(indx);
+        cout<<"\nThe number of letter is :";
+        cout<<masterList.getLettersCountByWordIndex(indx);
+        cout<<endl;
         }
         break;
 
         case 6:
         cout<<"Enter the word you want to search :";
         cin>>word;
-        lineLinked.searchByWord(word);
+        masterList.searchByWord(word);
         break;
 
         case 7:
+         cout << "Program End";
         exit(0);
        
         default:
@@ -72,10 +77,5 @@ class menu{
         }while(num_oper>0&&num_oper<8);
     }
 
-    // void creatFile(){
-    // LinkedListProcessor processor("assets/data.txt");
-    // processor.processFile();
-    // MasterLinkedList masterList = processor.getMasterList();
-    // }
     
 };

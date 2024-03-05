@@ -9,6 +9,5 @@ int main()
     menu M;
     cout << "Program Start\n";
     M.displayMenu();
-    cout << "Program End";
     return 0;
 }

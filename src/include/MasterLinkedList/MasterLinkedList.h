@@ -130,4 +130,66 @@ public:
 
         cout << endl;
     }
+
+     void searchByWord(string key)
+    {
+        int counter = 0;
+        bool isFound = false;
+
+        Node *TEMP_HEAD = HEAD;
+        while (isNotLastNode(TEMP_HEAD))
+        {
+            counter++;
+            if (TEMP_HEAD->DATA== key)
+            {
+                isFound = true;
+                break;
+            }
+            TEMP_HEAD = TEMP_HEAD->NEXT;
+        }
+
+        if (isFound)
+        {
+            cout << "\nThe word: '" << key << "' is found. It's order of the line is: " << counter << endl;
+        }
+        else
+        {
+            cout << "\nThe word: '" << key << "' is not found." << endl;
+        }
+    }
+
+     int getLettersCountByWordIndex(int index)
+    {
+        int loopIndex = 0;
+
+        Node *TEMP_HEAD = HEAD;
+        while (isNotLastNode(TEMP_HEAD))
+        {
+            loopIndex++;
+
+            if (loopIndex == index)
+            {
+                return TEMP_HEAD->DATA.length();
+            }
+
+            TEMP_HEAD = TEMP_HEAD->NEXT;
+        }
+        
+        return -1;
+    }
+
+     int getLettersCount()
+    {
+        int count = 0;
+
+        Node *TEMP_HEAD = HEAD;
+        while (isNotLastNode(TEMP_HEAD))
+        {
+            count += TEMP_HEAD->DATA.length();
+            TEMP_HEAD = TEMP_HEAD->NEXT;
+        }
+
+        return count;
+    }
+    
 };
