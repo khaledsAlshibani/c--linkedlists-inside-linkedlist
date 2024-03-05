@@ -23,7 +23,7 @@ public:
     LineLinkedList()
     {
         HEAD = nullptr;
-        TAIL=nullptr;
+        TAIL = nullptr;
     }
 
     bool isEmpty()
@@ -45,9 +45,9 @@ public:
             }
             else
             {
-        
-                TAIL->NEXT=newNode;
-                TAIL=newNode;
+
+                TAIL->NEXT = newNode;
+                TAIL = newNode;
             }
         }
     }
@@ -104,6 +104,4 @@ public:
         }
         cout << endl;
     }
-
-   
 };

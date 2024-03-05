@@ -165,27 +165,37 @@ public:
 
     void searchByWordAndLine(int lineIndex, int wordIndex)
     {
-        if(getLinesCount()<lineIndex){
-            cout<<"The line out of range \n";
+        if (getLinesCount() < lineIndex || lineIndex < 1)
+        {
+            cout << "The line " << lineIndex << " is not exists \n";
+            return;
         }
-        if(getWordsCount(lineIndex)<wordIndex){
-            cout<<"The word out of range \n";
+        if (getWordsCount(lineIndex) < wordIndex || wordIndex < 1)
+        {
+            cout << "Wrong word number as the line " << lineIndex << " has only " << getWordsCount(lineIndex) << " words\n";
+            return;
         }
 
-         string word;
-         Node *TEMP_HAED = HEAD;
+        Node *TEMP_HEAD = HEAD;
+        for (int i = 1; i < lineIndex; i++)
+        {
+            TEMP_HEAD = TEMP_HEAD->NEXT;
+        }
 
-        for(int i=0 ; i<=lineIndex ; i++)
+        istringstream iss(TEMP_HEAD->DATA);
+        string word;
+        int count = 0;
+        while (iss >> word)
         {
-            TEMP_HAED=TEMP_HAED->NEXT;
+            count++;
+            if (count == wordIndex)
+            {
+                cout << "The word " << wordIndex << " in line " << lineIndex << " is: " << word << endl;
+                return;
+            }
         }
-          istringstream iss(TEMP_HAED->DATA);
-        for(int i=0 ;i<=wordIndex ; i++)
-        {
-            iss>>word;
-        }
-        cout<<"The word is :"<<word<<endl;
-        
+
+        cout << "The word " << wordIndex << " in line " << lineIndex << " is : " << word << endl;
     }
 
     int getLettersCountByWordIndex(int index)
@@ -221,16 +231,31 @@ public:
 
         return count;
     }
+
     int getWordsCount(int lineIndex)
     {
         int count = 0;
+        bool isLast = false;
         string word;
         Node *TEMP_HEAD = HEAD;
-        for(int i=0 ;i<=lineIndex ;i++){
+
+        for (int i = 0; i <= lineIndex; i++)
+        {
+            if (!isNotLastNode(TEMP_HEAD) + 1)
+            {
+                break;
+                isLast = true;
+            }
             TEMP_HEAD = TEMP_HEAD->NEXT;
+
+            if (isLast)
+            {
+                return -1;
+            }
         }
+
         istringstream iss(TEMP_HEAD->DATA);
-        while (iss>>word)
+        while (iss >> word)
         {
             count++;
         }

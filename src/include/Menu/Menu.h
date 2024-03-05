@@ -6,8 +6,29 @@
 using namespace std;
 class Menu
 {
+    int operationNumber;
+
+    void displayOptions()
+    {
+        cout << "1- Display file content\n";
+        cout << "2- Display a specific line by its number\n";
+        cout << "3- Display the total number of lines in the file\n";
+        cout << "4- Display the total number of letters in the file\n";
+        cout << "5- Display number of letters in a specific line\n";
+        cout << "6- Search for a word in the file\n";
+        cout << "7- Search a specific word in a specific line\n";
+        cout << "8- Exit\n";
+        cout << "Choose an operation number: ";
+    }
+    
+    int getUserChoice()
+    {
+        cin >> operationNumber;
+        return operationNumber;
+    }
+
 public:
-    void displayMenu()
+    void processMenu()
     {
         LinkedListProcessor processor("assets/data.txt");
         processor.processFile();
@@ -15,27 +36,18 @@ public:
 
         // MasterLinkedList masterList;
         LineLinkedList lineLinked;
-        int num_oper;
-        int indx;
+        int operationNumber;
+        int index;
         string word;
 
         do
         {
-            cout << "1- For display the file content\n";
-            cout << "2- For display a specific line by its number\n";
-            cout << "3- For display the fill number of lines in the file\n";
-            cout << "4- For display the full number of letters in the file\n";
-            cout << "5- For display number of letters in a specific line\n";
-            cout << "6- For search for a word in the file\n";
-            cout << "7- For search a specific word in specific line\n";
-            cout << "8- For exit\n";
-            cout << "Enter the operation number:";
-
-            cin >> num_oper;
+            displayOptions();
+            operationNumber = getUserChoice();
 
             cout << "\n======================================================\n\n";
 
-            switch (num_oper)
+            switch (operationNumber)
             {
             case 1:
                 masterList.display();
@@ -44,8 +56,8 @@ public:
             case 2:
             {
                 cout << "Enter number of line :";
-                cin >> indx;
-                masterList.displayByLineIndex(indx);
+                cin >> index;
+                masterList.displayByLineIndex(index);
             }
             break;
 
@@ -60,8 +72,8 @@ public:
             case 5:
             {
                 cout << "Enter number of line :";
-                cin >> indx;
-                cout << masterList.getLettersCountByWordIndex(indx);
+                cin >> index;
+                cout << masterList.getLettersCountByWordIndex(index);
                 cout << endl;
             }
             break;
@@ -74,23 +86,23 @@ public:
 
             case 7:
             {
-            cout<<"Enter line :";
-            cin>>indx;
-            cout<<endl;
-            cout<<"Enter number of word :";
-            int num_word;
-            cin>>num_word;
-            masterList.searchByWordAndLine(indx,num_word);
+                cout << "Enter line :";
+                cin >> index;
+                cout << endl;
+                cout << "Enter number of word :";
+                int num_word;
+                cin >> num_word;
+                masterList.searchByWordAndLine(index, num_word);
             }
             break;
 
             case 8:
                 exit(0);
-                cout<<"End of progrm \n";
+                cout << "End of progrm \n";
 
             default:
                 break;
             }
-        } while (num_oper > 0 && num_oper < 9);
+        } while (operationNumber > 0 && operationNumber < 9);
     }
 };

@@ -8,6 +8,6 @@ int main()
 {
     Menu M;
     cout << "Program Start\n";
-    M.displayMenu();
+    M.processMenu();
     return 0;
 }
