@@ -31,6 +31,7 @@ Before diving into the code, it is recommended to have the following knowledge:
 - [LineLinkedList](src/include/LineLinkedList/README.md): A linked list structure representing a single line of text, with each node containing a word.
 - [MasterLinkedList](src/include/MasterLinkedList/README.md): A linked list structure containing line-linked lists, forming a hierarchical structure for storing text data.
 - [LinkedListProcessor](src/include/LinkedListProcessor/README.md): The main processing class that is responsible for parsing and storage of text data using linked lists.
+- [Menu](src/include/Menu/README.md): A class that lets the user interacting with the program, by displaying a menu of operations and processing the operation they want to process.
 
 ## Usage
 To use this repository, clone it. and ensure that your IDE supports C++.

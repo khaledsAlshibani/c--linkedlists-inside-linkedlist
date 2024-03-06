@@ -1,6 +1,6 @@
 # `Menu` Class Overview
 
-The `Menu` class job is to let the user interacting with the program, by crossing the operation they want to process.
+The `Menu` class job is to let the user w
 
 ## Contents
 
