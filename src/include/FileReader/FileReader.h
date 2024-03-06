@@ -159,6 +159,7 @@ public:
 
     ~FileReader()
     {
+        resetFile();
         file.close();
     }
 };

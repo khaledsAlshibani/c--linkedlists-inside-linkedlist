@@ -5,7 +5,7 @@ The `MasterLinkedList` class manages a linked list of line-linked-lists, where e
 ## Contents
 
 - [`MasterLinkedList` Class Overview](#masterlinkedlist-class-overview)
-  - [Contents](#table-of-contents)
+  - [Contents](#contents)
   - [Class Members](#class-members)
   - [Constructor](#constructor)
   - [Member Functions](#member-functions)
@@ -42,20 +42,31 @@ The `MasterLinkedList` class manages a linked list of line-linked-lists, where e
    - Parameters:
      - `index`: The index of the line to display.
 
+6. **`searchByWord(string key)`**:
+   - Searches for a word in the lines and prints if it's found.
+   - Parameters:
+     - `key`: Is the word that the function search for.
+
+7. **`searchByWordAndLine(int lineIndex, int wordIndex)`**:
+   - Searches for a word at a specific position in a specific line and prints it.
+   - Parameters:
+     - `lineIndex`: The index of the line that the word will be searched in.
+     - `wordIndex`: The index of the word in the `lineIndex` that the word will be searched in.
+
+8. **`getLettersCountByWordIndex(int index)`**:
+   - Returns the number of letters in a line at a specific index.
+   - Parameters:
+     - `index`: The index of the word.
+
+9. **`getLettersCount()`**:
+   - Returns the total number of letters in all lines.
+
+10. **`getWordsCount(int lineIndex)`**:
+    - Returns the total number of words in a specific line.
+   - lineIndex:
+     - `index`: The index of the line.
+
 ## Frequently Asked Questions (FAQs)
 
 - Can lines be inserted at any position in the list?
   - Yes, lines can be inserted at the end of the list. The `insertLine()` function appends a new line to the end of the linked list, ensuring that lines are added in sequential order.
-
-- How efficient is the retrieval of lines by index?
-  - The `displayByLineIndex(int index)` function retrieves a line by its index in the linked list. It traverses the list sequentially until the target index is reached or the end of the list is encountered. Therefore, the time complexity of this operation is `O(n)`, where `n` is the number of lines in the list.
-
-- What is the time and space complexity of inserting a line?
-  - **Time Complexity**: The time complexity of inserting a line into the `MasterLinkedList` class depends on the total number of words being inserted, denoted by `n`, and the average length of each word, denoted by `k`. 
-        - When inserting a line, the algorithm iterates through each word in the line and performs concatenation operations to construct the line. The time complexity of concatenating a single word to the line is O(k), and this operation is performed for each of the `n` words.
-        - Therefore, the overall time complexity of inserting a line is O(n * k).
-
-  - **Space Complexity**: The space complexity for inserting a line is O(n), where `n` is the total number of words being inserted. This is because memory is allocated for each individual node in the linked list, and the space required is directly related to the number of words in the line.
-  
-- What is `#pragma once` at the head of the file?
-  - `#pragma once` is a preprocessor directive that ensures a header file is included only once during compilation. It serves the same purpose as traditional include guards (`#ifndef`, `#define`, `#endif`), but with fewer lines of code and improved compile speed. It helps prevent issues like [circular dependencies](https://en.wikipedia.org/wiki/Circular_dependency#:~:text=In%20software%20engineering%2C%20a%20circular,also%20known%20as%20mutually%20recursive.) and reduces the likelihood of [name clashes](https://codepal.ai/error-message-explainer/query/atlCEDvx/naming-conflict-in-cpp-code#:~:text=When%20the%20same%20name%20is,number%3B%20in%20the%20code%20snippet.).

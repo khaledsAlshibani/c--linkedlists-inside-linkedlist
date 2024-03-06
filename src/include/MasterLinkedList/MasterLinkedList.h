@@ -9,6 +9,7 @@ using namespace std;
 class MasterLinkedList
 {
     Node *HEAD;
+    Node *TAIL;
 
     bool isNotLastNode(Node *node)
     {
@@ -23,7 +24,7 @@ class MasterLinkedList
 public:
     MasterLinkedList()
     {
-        HEAD = nullptr;
+        HEAD = TAIL = nullptr;
     }
 
     bool isEmpty()
@@ -48,16 +49,12 @@ public:
 
         if (isEmpty())
         {
-            HEAD = newNode;
+            HEAD = TAIL = newNode;
         }
         else
         {
-            Node *TEMP_HEAD = HEAD;
-            while (isNotLastNodeByNext(TEMP_HEAD))
-            {
-                TEMP_HEAD = TEMP_HEAD->NEXT;
-            }
-            TEMP_HEAD->NEXT = newNode;
+            TAIL->NEXT = newNode;
+            TAIL = newNode;
         }
     }
 

@@ -22,8 +22,7 @@ class LineLinkedList
 public:
     LineLinkedList()
     {
-        HEAD = nullptr;
-        TAIL = nullptr;
+        HEAD = TAIL = nullptr;
     }
 
     bool isEmpty()
@@ -45,7 +44,6 @@ public:
             }
             else
             {
-
                 TAIL->NEXT = newNode;
                 TAIL = newNode;
             }
