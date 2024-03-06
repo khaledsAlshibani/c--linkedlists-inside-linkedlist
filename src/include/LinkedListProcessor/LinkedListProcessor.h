@@ -14,14 +14,12 @@ class LinkedListProcessor
 
 public:
     LinkedListProcessor() : filePath("../assets/data.txt"), fileReader(filePath) {}
-    LinkedListProcessor(const string &filePath) : filePath(filePath), fileReader(filePath) {}
+    LinkedListProcessor(const string &UserFilePath) : filePath(UserFilePath), fileReader(filePath) {}
 
     void processFile()
     {
         int totalFileLines = fileReader.getLinesCount();
         LineLinkedList *lineList = new LineLinkedList[totalFileLines];
-
-        fileReader.resetFile();
 
         for (int lineNumber = 0; lineNumber < totalFileLines; lineNumber++)
         {

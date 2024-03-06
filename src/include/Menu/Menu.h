@@ -34,7 +34,6 @@ public:
         processor.processFile();
         MasterLinkedList masterList = processor.getMasterList();
 
-        // MasterLinkedList masterList;
         LineLinkedList lineLinked;
         int operationNumber;
         int index;
@@ -50,11 +49,13 @@ public:
             switch (operationNumber)
             {
             case 1:
+                system("cls");
                 masterList.display();
                 break;
 
             case 2:
             {
+                system("cls");
                 cout << "Enter number of line :";
                 cin >> index;
                 masterList.displayByLineIndex(index);
@@ -62,15 +63,18 @@ public:
             break;
 
             case 3:
+                system("cls");
                 cout << masterList.getLinesCount() << endl;
                 break;
 
             case 4:
+                system("cls");
                 cout << masterList.getLettersCount() << "\n";
                 break;
 
             case 5:
             {
+                system("cls");
                 cout << "Enter number of line :";
                 cin >> index;
                 cout << masterList.getLettersCountByWordIndex(index);
@@ -79,6 +83,7 @@ public:
             break;
 
             case 6:
+                system("cls");
                 cout << "Enter the word you want to search :";
                 cin >> word;
                 masterList.searchByWord(word);
@@ -86,6 +91,7 @@ public:
 
             case 7:
             {
+                system("cls");
                 cout << "Enter line :";
                 cin >> index;
                 cout << endl;
@@ -97,10 +103,13 @@ public:
             break;
 
             case 8:
-                exit(0);
+                system("cls");
                 cout << "End of progrm \n";
+                exit(0);
+                
 
             default:
+                cout<<"\nWrong operation number\n";
                 break;
             }
         } while (operationNumber > 0 && operationNumber < 9);
