@@ -44,53 +44,6 @@ public:
         return count;
     }
 
-    void displayLines()
-    {
-        string line;
-        while (getline(file, line))
-        {
-            cout << line << "\n\n\n\n";
-        }
-    }
-
-    void displayWords()
-    {
-        string word;
-        while (file >> word)
-        {
-            cout << word << endl;
-        }
-    }
-
-    void displayWordsByLine(int index)
-    {
-        string line;
-        int loopIndex = 1;
-        bool isFound = false;
-
-        while (getline(file, line))
-        {
-            if (loopIndex == index)
-            {
-                string word;
-
-                while (file >> word)
-                {
-                    cout << word << endl;
-                }
-
-                isFound = true;
-                break;
-            }
-            loopIndex++;
-        }
-
-        if (!isFound)
-        {
-            cout << "Line " << index << " not found" << endl;
-        }
-    }
-
     int getWordsCountByLine(int key)
     {
         string line;

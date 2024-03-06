@@ -18,23 +18,12 @@ The `FileReader` class provides functionalities to read and manipulate text file
 2. **`getLinesCount()`**:
    - Returns the total number of lines in the file.
 
-3. **`displayLines()`**:
-   - Displays all the lines in the file.
-
-4. **`displayWords()`**:
-   - Displays all the words in the file.
-
-5. **`displayWordsByLine(int index)`**:
-   - Displays the words in the specified line of the file.
-   - Parameters:
-     - `index`: The line number to display words from.
-
-6. **`getWordsCountByLine(int key)`**:
+3. **`getWordsCountByLine(int key)`**:
    - Returns the total number of words in the specified line of the file.
    - Parameters:
      - `key`: The line number to count words from.
 
-7. **`getWordsByLine(int key)`**:
+4. **`getWordsByLine(int key)`**:
    - Returns an array containing all the words in the specified line of the file.
    - Parameters:
      - `key`: The line number to retrieve words from.
