@@ -14,6 +14,10 @@ A linked list is a linear data structure commonly used as an alternative to arra
 - [Prerequisites](#prerequisites)
 - [Classes Documentations](#classes-documentations)
 - [Usage](#usage)
+- [Let's Connect](#lets-connect)
+  - [Sharaf ALmikhlafi](#sharaf-almikhlafi)
+  - [Khaled Alshibani](#khaled-alshibani)
+    - [Website \& CV](#website--cv)
 
 ## Overview
 This repository was created as a project assignment for college, implementing a linked list data structure in C++. The program reads a file containing text, breaks it into lines, and then further breaks each line into words. Each line is represented by a linked list, where each word is stored in a node of the linked list. Finally, all the lines are stored in another linked list.
@@ -40,3 +44,21 @@ git clone https://github.com/khaledsAlshibani/cpp-linkedlists-inside-linkedlist.
 
 cd cpp-linkedlists-inside-linkedlist
 ```
+
+## Let's Connect
+
+### Sharaf ALmikhlafi
+[![Sharaf's GitHub](https://img.shields.io/badge/GitHub-Follow-9cf?style=for-the-badge&logo=github)](https://github.com/sharafALmikhlafi)
+
+### Khaled Alshibani
+[![Khaled's GitHub](https://img.shields.io/badge/GitHub-Follow-9cf?style=for-the-badge&logo=github)](https://github.com/khaledsAlshibani)
+[![Khaled's CodePen](https://img.shields.io/badge/CodePen-Follow-9cf?style=for-the-badge&logo=codepen)](https://codepen.io/khaledsAlshibani)
+[![Khaled's LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-9cf?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/khaledsAlshibani)
+[![Khaled's Twitter](https://img.shields.io/badge/Twitter-Follow-9cf?style=for-the-badge&logo=x)](https://twitter.com/khaleds_saif)
+
+#### Website & CV
+
+[![Khaled's Website](https://img.shields.io/badge/Website-Visit-9cf?style=for-the-badge&logo=appveyor)](https://khaled.technway.biz/)
+[![Khaled's CV (Resume)](https://img.shields.io/badge/CV-View-9cf?style=for-the-badge&logo=appveyor)](https://khaled.technway.biz/assets/Khaled-Alshibani-Resume.pdf)
+
+Feel free to explore my repositories, and don't hesitate to connect with me on social media or reach out for collaboration and discussions!

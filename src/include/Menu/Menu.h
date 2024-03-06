@@ -49,13 +49,11 @@ public:
             switch (operationNumber)
             {
             case 1:
-                system("cls");
                 masterList.display();
                 break;
 
             case 2:
             {
-                system("cls");
                 cout << "Enter number of line :";
                 cin >> index;
                 masterList.displayByLineIndex(index);
@@ -63,18 +61,15 @@ public:
             break;
 
             case 3:
-                system("cls");
                 cout << masterList.getLinesCount() << endl;
                 break;
 
             case 4:
-                system("cls");
                 cout << masterList.getLettersCount() << "\n";
                 break;
 
             case 5:
             {
-                system("cls");
                 cout << "Enter number of line :";
                 cin >> index;
                 cout << masterList.getLettersCountByWordIndex(index);
@@ -83,7 +78,6 @@ public:
             break;
 
             case 6:
-                system("cls");
                 cout << "Enter the word you want to search :";
                 cin >> word;
                 masterList.searchByWord(word);
@@ -91,7 +85,6 @@ public:
 
             case 7:
             {
-                system("cls");
                 cout << "Enter line :";
                 cin >> index;
                 cout << endl;
@@ -103,7 +96,6 @@ public:
             break;
 
             case 8:
-                system("cls");
                 cout << "End of progrm \n";
                 exit(0);
                 

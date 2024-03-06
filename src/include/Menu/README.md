@@ -1,6 +1,6 @@
 # `Menu` Class Overview
 
-The `Menu` class job is to let the user w
+The `Menu` class job is to let the user interacting with the program, by displaying a menu of operations and processing the operation they want to process.
 
 ## Contents
 
